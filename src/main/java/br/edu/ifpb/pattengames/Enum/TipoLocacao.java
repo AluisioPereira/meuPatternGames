@@ -8,6 +8,7 @@ package br.edu.ifpb.pattengames.Enum;
 /**
  *
  * @author José
+ * dddd
  */
 public enum TipoLocacao {
      COMUN("comum") ,ESPECIAL("especial");
