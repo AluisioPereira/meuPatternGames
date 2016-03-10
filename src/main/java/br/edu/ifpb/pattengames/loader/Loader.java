@@ -5,6 +5,7 @@
  */
 package br.edu.ifpb.pattengames.loader;
 
+import br.edu.ifpb.pattengames.contole.ControladorCLiente;
 import br.edu.ifpb.pattengames.dao.*;
 import br.edu.ifpb.pattengames.dao.ClienteDaoIf;
 import br.edu.ifpb.pattengames.entidades.Cliente;
@@ -15,7 +16,7 @@ import br.edu.ifpb.pattengames.exception.LocacaoExistenteException;
 import java.text.ParseException;
 import br.edu.ifpb.pattengames.factoy.DaoFactory;
 import br.edu.ifpb.pattengames.factoy.LocacaoFavtoy;
-import br.edu.ifpb.pattengames.model.BoscaJogoBo;
+import br.edu.ifpb.pattengames.model.*;
 import br.edu.ifpb.pattengames.model.BuscaClienteBo;
 import br.edu.ifpb.pattengames.model.CadastroLocacaoBo;
 import java.util.List;
@@ -34,15 +35,17 @@ public class Loader {
 //        c.setId(1);
         ClienteDaoIf dao = new ClienteDao();
         ReservasDaoIf dj = DaoFactory.createFactory(DaoFactory.DAO_BD).criaReservaDao();
-          BoscaJogoBo bo = new BoscaJogoBo();
+          BuscaJogoBo bo = new BuscaJogoBo();
         List<Jogo> ca = bo.buscarTodos();
         Reserva r = new Reserva(dao.buscaPorId(4),bo.buscarPorMome("FIFA 14") );
         ReservasDaoIf d = DaoFactory.createFactory(DaoFactory.DAO_BD).criaReservaDao();
-        List<Reserva> xx = d.buscarEmailCliente(dao.buscaPorEmail("joseifpb2015@gmail.com").getEmail());
+        // List<Reserva> xx = d.buscarEmailCliente(dao.buscaPorEmail("joseifpb2015@gmail.com").getEmail());
+        ControladorCLiente   boc = new ControladorCLiente();
+        Cliente c = boc.buscarPorCPF("185.302.491-00");
         
        
-        for(Reserva c: xx)
-            System.err.println("lista   "+c.getCliente());
+       // for(Reserva c: xx)
+            System.err.println("lista   "+c);
 //        j.alugado();
 //        boolean f = dj.altera
         //System.out.println("resut "+j.getEstado()+"devolver "+f);

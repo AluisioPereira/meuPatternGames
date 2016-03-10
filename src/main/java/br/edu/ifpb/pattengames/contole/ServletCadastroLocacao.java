@@ -119,8 +119,9 @@ public class ServletCadastroLocacao extends HttpServlet {
         Locacao l = LocacaoFavtoy.createFactory(LocacaoFavtoy.LOCACAO).criarLocacao();
         if (request.getParameter("cpf") != null) {
             cpf = request.getParameter("cpf");
-            BuscaClienteBo bo = new BuscaClienteBo();
-            Cliente cliente = bo.buscarPorCPF(cpf);
+            ControladorCLiente   controle = new ControladorCLiente();
+            
+            Cliente cliente = controle.buscarPorCPF(cpf);
             Jogo jogo = DaoFactory.createFactory(DaoFactory.DAO_BD).criaJogoDao().buscaPorNome(request.getParameter("nomejogo"));
             l.setCliente(cliente);
             l.setJogo(jogo);

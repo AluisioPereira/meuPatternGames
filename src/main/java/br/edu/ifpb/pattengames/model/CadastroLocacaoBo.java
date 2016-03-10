@@ -42,11 +42,11 @@ public class CadastroLocacaoBo {
             return false;
         }
 
-       // Jogo buscarExistente = DaoFactory.createFactory(DaoFactory.DAO_BD).criaJogoDao().buscaPorId(locacao.getJogo().getId());
-       // if (buscarExistente != null) {
-        //    throw new LocacaoExistenteException();
+        Jogo buscarExistente = DaoFactory.createFactory(DaoFactory.DAO_BD).criaJogoDao().buscaPorId(locacao.getJogo().getId());
+        if (buscarExistente != null) {
+            throw new LocacaoExistenteException();
             
-       // }
+        }
         if (factory.criaLocacaoDao().add(locacao)) {
             ClienteDaoIf dao = new ClienteDao();
             JogoDaoIf dj = DaoFactory.createFactory(DaoFactory.DAO_BD).criaJogoDao();

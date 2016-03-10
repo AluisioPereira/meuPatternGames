@@ -44,4 +44,8 @@ public class BuscaClienteBo {
         return Clientedao.buscarTodos();
 
     }
+    public Cliente buscarPorNome(String npme) {
+        Clientedao = factory.criaClienteDao();
+        return Clientedao.buscaPorNome(npme);
+    }
 }

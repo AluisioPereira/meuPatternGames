@@ -5,8 +5,12 @@
  */
 package br.edu.ifpb.pattengames.contole;
 
+import br.edu.ifpb.pattengames.entidades.Cliente;
+import br.edu.ifpb.pattengames.exception.EmailExistenteException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,18 +34,24 @@ public class ServletAtualizarCliente extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ServletAtualizarCliente</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ServletAtualizarCliente at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        PrintWriter out = response.getWriter();
+        ControladorCLiente controle = new ControladorCLiente();
+        boolean result = false;
+        Cliente clienteAtualizado = controle.buscarPorCPF(request.getParameter("cpf"));
+        if (clienteAtualizado != null) {
+            clienteAtualizado = atualizarInfo(request);
         }
+
+        try {
+            result = controle.atualizar(clienteAtualizado);
+        } catch (EmailExistenteException ex) {
+            Logger.getLogger(ServletAtualizarCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if (result) {
+            request.setAttribute("clienteAtualizado", result);
+        }
+        request.getRequestDispatcher("AtualizarCliente").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -82,5 +92,9 @@ public class ServletAtualizarCliente extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    private Cliente atualizarInfo(HttpServletRequest request) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

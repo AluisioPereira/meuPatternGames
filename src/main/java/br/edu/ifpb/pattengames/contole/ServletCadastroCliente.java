@@ -54,8 +54,9 @@ public class ServletCadastroCliente extends HttpServlet {
         if (cliente != null) {
 
             try {
-                CadastroClienteBO boCadastro = new CadastroClienteBO();
-                boolean cc = resultadoCadastro = boCadastro.cadastrar(cliente);
+                ControladorCLiente   boCadastro = new ControladorCLiente();
+                
+                boolean cc = resultadoCadastro = boCadastro.add(cliente);
                 out.print("cadastrou " + cc);
             } catch (EmailExistenteException ex) {
                 Logger.getLogger(ServletCadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
