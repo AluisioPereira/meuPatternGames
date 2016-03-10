@@ -147,12 +147,9 @@
                         <table class="table table-bordered table-hover table-selectable">
                             <thead>
                                 <tr class="alert-info text-center">
-                                    <th id="tableHeadId" class="text-center">ID</th>
                                     <th id="tableHeadId" class="text-center">CPF</th>
                                     <th id="tableHeadNome"class="text-center">Nome</th>
                                     <th id="tableHeadEmail" class="text-center">E-mail</th> 
-                                    <th id="tableHeadEmail" class="text-center"></th>                        
-                                    <th id="tableHeadEmail" class="text-center"></th>
                                 </tr>
                             </thead>
                             <tbody id="usersTable" class="searchable">
@@ -162,7 +159,6 @@
                                     List<Cliente> allUser = busca.buscarTodos();
                                     for (Cliente u : allUser) {
                                         out.print("<tr>");
-                                        out.print("<th class=\"text-center\" \"id\">" + u.getId() + "</th>");
                                         out.print("<th class=\"text-center\" \"id\">" + u.getCPF() + "</th>");
                                         out.print("<th>" + u.getNome() + "</th>");
                                         out.print("<th class=\"text-center\">" + u.getEmail() + "</th>");
