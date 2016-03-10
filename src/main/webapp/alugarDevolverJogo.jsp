@@ -51,6 +51,44 @@
             <%@ include file="barraMenu.jsp"%>
         </div>
 
+
+
+
+        <form class="form-horizontal">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>Form Name</legend>
+
+                <!-- Button Drop Down -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="alugarDevolver">Jogo</label>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <input id="alugarDevolver" name="alugarDevolver" class="form-control" placeholder="Ex.: super mario" type="text" required="">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    ações
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="#">alugar</a></li>
+                                    <li><a href="#">devolver</a></li>
+                                    <li><a href="#">observar</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+
+
+
+
+
+
         <form class="form-horizontal">
             <fieldset>
 
@@ -133,7 +171,7 @@
             </fieldset>
         </form>
         <hr>
-        
+
 
         <%@ include file="rodape.jsp" %>
 
