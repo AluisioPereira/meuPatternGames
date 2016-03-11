@@ -12,7 +12,6 @@ br\edu\ifpb\pattengames\exception\EmailExistenteException.class
 br\edu\ifpb\pattengames\entidades\Locacao.class
 br\edu\ifpb\pattengames\dao\LocacaoDao.class
 br\edu\ifpb\pattengames\factoy\FactoyLocacaoIF.class
-br\edu\ifpb\pattengames\model\BoscaJogoBo.class
 br\edu\ifpb\pattengames\conexao\ConexaoIF.class
 br\edu\ifpb\pattengames\entidades\MultaAtrasoLocacaoComum.class
 br\edu\ifpb\pattengames\factoy\FactoyLocacao.class
@@ -23,8 +22,10 @@ br\edu\ifpb\pattengames\loader\Loader.class
 br\edu\ifpb\pattengames\model\AtualizarClienteBO.class
 br\edu\ifpb\pattengames\entidades\LocacaoEspecial.class
 br\edu\ifpb\pattengames\factoy\DaoFactoryIF.class
+br\edu\ifpb\pattengames\model\RemoverClienteBO.class
 br\edu\ifpb\pattengames\entidades\Cliente.class
 br\edu\ifpb\pattengames\dao\ClienteDaoIf.class
+br\edu\ifpb\pattengames\model\BuscaJogoBo.class
 br\edu\ifpb\pattengames\contole\ServletExcluirCliente.class
 br\edu\ifpb\pattengames\dao\JogoDao.class
 br\edu\ifpb\pattengames\contole\ServletAtualizarCliente.class
@@ -38,12 +39,12 @@ br\edu\ifpb\pattengames\contole\ServletCadastroLocacao.class
 br\edu\ifpb\pattengames\conexao\Conexao.class
 br\edu\ifpb\pattengames\model\CadastroClienteBO.class
 br\edu\ifpb\pattengames\state\Disponivel.class
+br\edu\ifpb\pattengames\contole\ControladorCLiente.class
 br\edu\ifpb\pattengames\dao\MultaDao.class
 br\edu\ifpb\pattengames\entidades\MultaAtrasoLocacaoEspecial.class
 br\edu\ifpb\pattengames\model\VerificarCadastroBo.class
 br\edu\ifpb\pattengames\dao\LocacaoDaoIF.class
 br\edu\ifpb\pattengames\entidades\Jogo.class
-br\edu\ifpb\pattengames\contole\ServletEditarCliente.class
 br\edu\ifpb\pattengames\contole\ServletCadastroCliente.class
 br\edu\ifpb\pattengames\entidades\Reserva.class
 br\edu\ifpb\pattengames\model\DevolucaoBo.class

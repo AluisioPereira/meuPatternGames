@@ -1,9 +1,9 @@
-D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\contole\ServletEditarCliente.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\factoy\DaoFactory.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\dao\ClienteDao.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\entidades\MultaAtrasoLocacaoComum.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\conexao\DataBaseException.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\model\AtualizarClienteBO.java
+D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\model\BuscaJogoBo.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\dao\MultaDaoIf.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\entidades\CalculaMulta.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\model\ValidaCPF.java
@@ -22,6 +22,7 @@ D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\exception\EmailExistenteException.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\model\ExclurClienteBo.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\state\Disponivel.java
+D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\contole\ControladorCLiente.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\dao\ReservaDao.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\dao\ReservasDaoIf.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\loader\Loader.java
@@ -41,11 +42,11 @@ D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\contole\ServletCadastroCliente.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\conexao\ConexaoIF.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\dao\LocacaoDaoIF.java
+D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\model\RemoverClienteBO.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\Enum\TipoLocacao.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\contole\ServletAtualizarCliente.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\dao\MultaDao.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\entidades\LocacaoComum.java
-D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\model\BoscaJogoBo.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\contole\ServletExcluirCliente.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\contole\ServletCadastroLocacao.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\exception\LocacaoExistenteException.java

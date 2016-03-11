@@ -19,7 +19,9 @@ import br.edu.ifpb.pattengames.factoy.LocacaoFavtoy;
 import br.edu.ifpb.pattengames.model.*;
 import br.edu.ifpb.pattengames.model.BuscaClienteBo;
 import br.edu.ifpb.pattengames.model.CadastroLocacaoBo;
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -41,11 +43,14 @@ public class Loader {
         ReservasDaoIf d = DaoFactory.createFactory(DaoFactory.DAO_BD).criaReservaDao();
         // List<Reserva> xx = d.buscarEmailCliente(dao.buscaPorEmail("joseifpb2015@gmail.com").getEmail());
         ControladorCLiente   boc = new ControladorCLiente();
-        Cliente c = boc.buscarPorCPF("185.302.491-00");
+       Cliente cs = boc.buscaPorId(35);
+     //   DaoFactory.createFactory(DaoFactory.DAO_BD).
+        MultaDaoIf multa =new MultaDao();
+        List<BigDecimal> c = multa.buscarCliente(37);
         
        
        // for(Reserva c: xx)
-            System.err.println("lista   "+c);
+            System.err.println(c);
 //        j.alugado();
 //        boolean f = dj.altera
         //System.out.println("resut "+j.getEstado()+"devolver "+f);

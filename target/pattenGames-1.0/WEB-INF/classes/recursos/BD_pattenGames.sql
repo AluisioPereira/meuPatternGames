@@ -25,8 +25,8 @@ CREATE TABLE LOCACAO(
 );
 CREATE TABLE MULTA(
 	idcliente INTEGER NOT NULL,
-        muta DOUBLE PRECISION NOT NULL,
-       PRIMARY KEY(idcliente)
+        multa DOUBLE PRECISION NOT NULL,
+       PRIMARY KEY(idcliente,multa)
 );
 CREATE TABLE RESERVARJOGO(
          id serial,

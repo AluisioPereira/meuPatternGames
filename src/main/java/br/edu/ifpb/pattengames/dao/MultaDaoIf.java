@@ -19,6 +19,6 @@ public interface MultaDaoIf {
 
     public boolean remover(Integer idCliente);
 
-    public Map buscaCliente(Integer idCliente);
+    public List<BigDecimal> buscarCliente(Integer idCliente);
 
 }
