@@ -14,7 +14,7 @@ import java.util.Date;
  *
  * @author José
  */
-public class MultaAtrasoLocacaoEspecial implements CalculaMulta {
+public class MultaAtrasoLocacaoEspecial implements CalculaMultaIF {
 
     @Override
     public BigDecimal calcularMulta(String dataLocacao) {

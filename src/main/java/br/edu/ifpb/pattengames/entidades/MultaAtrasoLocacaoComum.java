@@ -19,11 +19,11 @@ import javafx.scene.chart.PieChart.Data;
  *
  * @author José
  */
-public class MultaAtrasoLocacaoComum implements CalculaMulta {
+public class MultaAtrasoLocacaoComum implements CalculaMultaIF {
 
     @Override
     public BigDecimal calcularMulta(String dataLocacao) {
-       // Dando um exemplo: quantos dias se passam desde 07/09/1822 até 05/06/2006?
+       
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
         df.setLenient(false);
         Date d1 = null;

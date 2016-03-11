@@ -12,7 +12,7 @@ import javafx.scene.chart.PieChart.Data;
  *
  * @author José
  */
-public interface CalculaMulta {
+public interface CalculaMultaIF {
 
     public BigDecimal calcularMulta(String dataLocacao);
 }
