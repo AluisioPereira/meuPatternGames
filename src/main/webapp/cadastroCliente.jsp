@@ -143,75 +143,38 @@
                             </div>
                         </div>
 
+                        <!-- Table Usuários-->
+                        <table class="table table-bordered table-hover table-selectable">
+                            <thead>
+                                <tr class="alert-info text-center">
+                                    <th id="tableHeadId" class="text-center">CPF</th>
+                                    <th id="tableHeadNome"class="text-center">Nome</th>
+                                    <th id="tableHeadEmail" class="text-center">E-mail</th> 
+                                </tr>
+                            </thead>
+                            <tbody id="usersTable" class="searchable">
 
+
+                                <%  BuscaClienteBo busca = new BuscaClienteBo();
+                                    List<Cliente> allUser = busca.buscarTodos();
+                                    for (Cliente u : allUser) {
+                                        out.print("<tr>");
+                                        out.print("<th class=\"text-center\" \"id\">" + u.getCPF() + "</th>");
+                                        out.print("<th>" + u.getNome() + "</th>");
+                                        out.print("<th class=\"text-center\">" + u.getEmail() + "</th>");
+                                        out.print("<th class=\"text-center\"><button class='btn btn-warning glyphicon glyphicon-pencil' onClick='atualizarCliente.jsp'></button></th>");
+                                        out.print("<th class=\"text-center\"><button class='btn btn-danger glyphicon glyphicon-trash'></button></th>");
+                                        out.print("</tr>");
+                                    }
+                                %>               
+                            </tbody>
+                        </table>
 
                     </fieldset>
                 </form>
             </div>
-            <!-- Table Usuários-->
-            <table class="table table-bordered table-hover table-selectable">
-                <thead>
-                    <tr class="alert-info text-center">
-                        <th id="tableHeadId" class="text-center">ID</th>
-                        <th id="tableHeadId" class="text-center">CPF</th>
-                        <th id="tableHeadNome"class="text-center">Nome</th>
-                        <th id="tableHeadEmail" class="text-center">E-mail</th> 
-                    </tr>
-                </thead>
-                <tbody id="usersTable" class="searchable">
-                    <%  BuscaClienteBo busca = new BuscaClienteBo();
-                        List<Cliente> allUser = busca.buscarTodos();
-                        for (Cliente u : allUser) {
-                            out.print("<tr>");
-                            out.print("<th class=\"text-center\" \"id\">" + u.getId() + "</th>");
-                            out.print("<th class=\"text-center\" \"id\">" + u.getCPF() + "</th>");
-                            out.print("<th>" + u.getNome() + "</th>");
-                            out.print("<th class=\"text-center\">" + u.getEmail() + "</th>");
-                            out.print("</tr>");
-                        }
-                    %>
-                <div id="botoesAcoesUsarios" class="container-fluid panel-footer">
-
-                    <button id="btnTornarAdmin" class="btn btn-warning glyphicon glyphicon-pencil" disabled> Editar</button>
-                    <button id="btn-deletar" class="btn btn-danger glyphicon glyphicon-trash"> Excluir</button>
-                </div>
-                </tbody>
-            </table>
-
-
-
-            
 
         </div> <!-- fim painel -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         <%@ include file="rodape.jsp" %>
 
@@ -243,28 +206,6 @@
                     });
                 }(jQuery));
             });
-            //ações nos cliques dos botões de habilitar e desabilitar
-            $("#btnTornarAdmin").click(function () {
-                var idUsuario = $('.table-selectable > #usersTable > tr.active').find('th:first-child').text();
-                changeToAdmin(idUsuario, "true");
-            });
-
-            $("#btnDesabilitarAdmin").click(function () {
-                var idUsuario = $('.table-selectable > #usersTable > tr.active').find('th:first-child').text();
-                changeToAdmin(idUsuario, "false");
-            });
-            //chama servlet que muda Status de Admin
-            function changeToAdmin(id, habilitar) {
-                $.ajax({
-                    url: "ConfigurarUsuarioAdmin",
-                    type: "POST",
-                    data: {id: id, habilitar: habilitar},
-                    success: function (data) {
-                        location.reload();
-                    }
-            }
-            );
-
 
         </script>
 

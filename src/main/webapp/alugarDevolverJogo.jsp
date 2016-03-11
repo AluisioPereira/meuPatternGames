@@ -51,66 +51,36 @@
             <%@ include file="barraMenu.jsp"%>
         </div>
 
+
+
+
         <form class="form-horizontal">
             <fieldset>
 
-                <form class="form-horizontal" action="">
-                    
-                    <fieldset>
+                <!-- Form Name -->
+                <legend>Form Name</legend>
 
-                        <!-- Form Name -->
-                        <legend>Emprestar jogo</legend>
-
-                        <!-- Prepended text-->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label" for="cpf"></label>
-                            <div class="col-md-8">
-                                <div class="input-group">
-                                    <span class="input-group-addon">CPF</span>
-                                    <input id="cpf" name="cpf" class="form-control" placeholder="Ex.: 19294954543" type="text">
-                                </div>
-                                <p class="help-block">Informe o CPF do cliente</p>
+                <!-- Button Drop Down -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="alugarDevolver">Jogo</label>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <input id="alugarDevolver" name="alugarDevolver" class="form-control" placeholder="Ex.: super mario" type="text" required="">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    ações
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="#">alugar</a></li>
+                                    <li><a href="#">devolver</a></li>
+                                    <li><a href="#">observar</a></li>
+                                </ul>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Button -->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label" for="cpf"></label>
-                            <div class="col-md-4">
-                                <button id="cpf" name="cpf" class="btn btn-primary">Pesquise</button>
-                            </div>
-                        </div>
-
-                    </fieldset>
-                </form>
-                <form class="form-horizontal">
-                    <fieldset>
-
-                        <!-- Form Name -->
-                        <legend>Pesquise jogo</legend>
-
-                        <!-- Prepended text-->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label" for="jogo"></label>
-                            <div class="col-md-8">
-                                <div class="input-group">
-                                    <span class="input-group-addon">Jogo</span>
-                                    <input id="jogo" name="jogo" class="form-control" placeholder="Ex.: super mário" type="text">
-                                </div>
-                                <p class="help-block">Informe o nome do jogo</p>
-                            </div>
-                        </div>
-
-                        <!-- Button -->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label" for="cpf"></label>
-                            <div class="col-md-4">
-                                <button id="cpf" name="cpf" class="btn btn-primary">Pesquise</button>
-                            </div>
-                        </div>
-
-                    </fieldset>
-                </form>
             </fieldset>
         </form>
 
@@ -118,8 +88,89 @@
 
 
 
-        <h1>Alugar, Devolver Jogos!</h1>
 
+        <form class="form-horizontal">
+            <fieldset>
+
+                <form class="form-horizontal" action="">
+
+                    <fieldset>
+
+                        <!-- Form Name -->
+                        <legend>I - Alugar jogo</legend>
+
+                        <!-- Prepended text-->
+                        <div class="form-group">
+                            <label class="col-md-offset-0 control-label" for="cpf"></label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <form action="">
+                                        <span class="input-group-addon icon-keyboard"> CPF</span>
+                                        <input id="cpf" name="cpf" class="form-control" placeholder="Ex.: 19294954543" type="text">
+                                        <button id="cpf" name="cpf" class="btn btn-success">Buscar</button>
+                                    </form>
+                                </div>
+                                <p class="help-block">Informe e valide o CPF do cliente</p>
+                            </div>
+
+                            <label class="col-md-1 control-label" for="nomeJogo"></label>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <form action="">
+                                        <span class="input-group-addon icon-keyboard"> Jogo</span>
+                                        <input id="jogo" name="jogo" class="form-control" placeholder="Ex.: super mário" type="text">
+                                        <button id="nomeJogo" name="nomeJogo" class="btn btn-success">Buscar</button>
+                                    </form>
+                                </div>
+                                <p class="help-block">Informe o nome do jogo</p>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-md-offset-0 control-label" for="alugarJogo"></label>
+                            <div class="col-md-4">
+                                <button id="alugarJogo" name="AlugarJogo" class="btn btn-primary">Alugar jogo</button>
+                            </div>
+                        </div>
+
+
+                    </fieldset>
+                </form>
+                <hr>
+                <form class="form-horizontal">
+                    <fieldset>
+
+                        <!-- Form Name -->
+                        <legend>II- Devolver jogo</legend>
+
+                        <!-- Prepended text-->
+                        <div class="form-group">
+                            <label class="col-md-offset-0 control-label" for="nomeJogo"></label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon icon-keyboard"> Jogo</span>
+                                    <input id="jogo" name="jogo" class="form-control" placeholder="Ex.: super mário" type="text">
+                                    <button id="nomeJogo" name="nomeJogo" class="btn btn-success">Buscar</button>
+
+                                </div>
+                                <p class="help-block">Informe o nome do jogo</p>
+                            </div>
+                        </div>
+
+                        <!-- Button -->
+                        <div class="form-group">
+                            <label class="col-md-offset-0 control-label" for="devolverJogo"></label>
+                            <div class="col-md-4">
+                                <button id="devolverJogo" name="devolverJogo" class="btn btn-primary">Devolver jogo</button>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </fieldset>
+        </form>
+        <hr>
 
 
         <%@ include file="rodape.jsp" %>
