@@ -11,7 +11,7 @@ package br.edu.ifpb.pattengames.Enum;
  * dddd
  */
 public enum TipoLocacao {
-     COMUN("comum") ,ESPECIAL("especial");
+     COMUM("comum") ,ESPECIAL("especial");
     
     public String id;
     

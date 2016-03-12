@@ -14,6 +14,7 @@ import br.edu.ifpb.pattengames.factoy.DaoFactory;
  */
 public class AlteraSateJogo {
     public static boolean AlteraSateJogo(Jogo jogo){
+        jogo.devolver();
         return  DaoFactory.createFactory(DaoFactory.DAO_BD).criaJogoDao().alterar(jogo);
     }
     

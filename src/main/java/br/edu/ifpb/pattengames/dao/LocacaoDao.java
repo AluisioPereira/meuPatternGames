@@ -200,7 +200,8 @@ public class LocacaoDao implements LocacaoDaoIF {
         l.setDataLocacao(rs.getDate("datalocacao").toLocalDate());
         l.setDataLocacao(rs.getDate("datadevolucao").toLocalDate());
         l.setTipo(rs.getString("tipo"));
-        System.err.println("1--1-1-1--1-" + rs.getDate("datalocacao"));
+        l.setId(rs.getInt("id"));
+        
         return l;
     }
 

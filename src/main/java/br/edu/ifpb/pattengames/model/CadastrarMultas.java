@@ -19,27 +19,23 @@ import java.time.format.DateTimeFormatter;
  * @author José
  */
 public class CadastrarMultas {
-    
-        
-    
 
     public boolean calMulta(Locacao locacao) {
         BigDecimal multa;
-         if (locacao.getTipo().equals(TipoLocacao.COMUN)) {
-             
+        if (locacao.getTipo().equals(TipoLocacao.COMUM)) {
+            System.err.println("et multa");
             MultaAtrasoLocacaoComum locComum = new MultaAtrasoLocacaoComum();
-              multa = locComum.calcularMulta(converteLocalDateEmString(locacao.getDataLocacao()));
+            multa = locComum.calcularMulta(locacao.getDataLocacao());
 
         } else {
             MultaAtrasoLocacaoEspecial locEspecial = new MultaAtrasoLocacaoEspecial();
-              multa = locEspecial.calcularMulta(converteLocalDateEmString(locacao.getDataLocacao()));
+            multa = locEspecial.calcularMulta(locacao.getDataDevolucao());
         }
-        
+
         return DaoFactory.createFactory(DaoFactory.DAO_BD).criaMultaDao().add(locacao.getCliente().getId(), multa);
 
     }
-     private String converteLocalDateEmString(LocalDate data) {
-        return data.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-    }
-    
+
+   
+
 }

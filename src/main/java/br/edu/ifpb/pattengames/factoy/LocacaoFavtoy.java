@@ -12,7 +12,7 @@ import static br.edu.ifpb.pattengames.factoy.DaoFactory.DAO_BD;
  * @author José
  */
 public class LocacaoFavtoy {
-     public static final int LOCACAO = 1;
+     public static final int LOCACAO = 0;
 
     public static FactoyLocacaoIF createFactory(int factoryType) {
         if (factoryType == DAO_BD) {

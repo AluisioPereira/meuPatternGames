@@ -18,7 +18,7 @@ import java.util.Calendar;
 public class LocacaoComum extends Locacao {
 
     public LocacaoComum() {
-        this.setTipo(TipoLocacao.COMUN.name());
+        this.setTipo(TipoLocacao.COMUM.name());
         setDataLocacao(LocalDate.now());
         setDataDevolucao(dataDevolver());
     }

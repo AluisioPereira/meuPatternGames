@@ -6,6 +6,7 @@
 package br.edu.ifpb.pattengames.entidades;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import javafx.scene.chart.PieChart.Data;
 
 /**
@@ -14,5 +15,5 @@ import javafx.scene.chart.PieChart.Data;
  */
 public interface CalculaMultaIF {
 
-    public BigDecimal calcularMulta(String dataLocacao);
+    public BigDecimal calcularMulta(LocalDate dataDevolucao);
 }

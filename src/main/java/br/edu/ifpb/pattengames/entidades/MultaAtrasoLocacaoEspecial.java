@@ -8,6 +8,8 @@ package br.edu.ifpb.pattengames.entidades;
 import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 /**
@@ -17,24 +19,16 @@ import java.util.Date;
 public class MultaAtrasoLocacaoEspecial implements CalculaMultaIF {
 
     @Override
-    public BigDecimal calcularMulta(String dataLocacao) {
-        // Dando um exemplo: quantos dias se passam desde 07/09/1822 até 05/06/2006?
-        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-        df.setLenient(false);
-        Date d1 = null;
-        try {
-            d1 = df.parse(dataLocacao);
-        } catch (java.text.ParseException ex) {
+    public BigDecimal calcularMulta(LocalDate dataDevolucao) {
+         
+      int diasAtraso = (int) dataDevolucao.until(LocalDate.now(), ChronoUnit.DAYS);
+    if(diasAtraso  > 0){
+        return new BigDecimal((diasAtraso *3) +(3));
+       
+    }
+     return BigDecimal.ZERO;
 
-        }
-        Date d2 = new Date();// tual
-        System.out.println("dataatual " + d2);
-        long diasAtraso = (d2.getTime() - d1.getTime());
-        System.err.println("dias " + (diasAtraso / 86400000L));
-        if ((diasAtraso / 86400000L) > 0) {
-            return new BigDecimal(((diasAtraso / 86400000L) * 3) + 3);
-        }
-        return BigDecimal.ZERO;
+   
     }
 
 }

@@ -5,30 +5,23 @@
  */
 package br.edu.ifpb.pattengames.loader;
 
-import br.edu.ifpb.pattengames.contole.ControladorCLiente;
-import br.edu.ifpb.pattengames.dao.*;
-import br.edu.ifpb.pattengames.dao.ClienteDaoIf;
+import br.edu.ifpb.pattengames.Enum.TipoLocacao;
+import br.edu.ifpb.pattengames.dao.JogoDaoIf;
 import br.edu.ifpb.pattengames.entidades.Cliente;
 import br.edu.ifpb.pattengames.entidades.Jogo;
 import br.edu.ifpb.pattengames.entidades.Locacao;
 import br.edu.ifpb.pattengames.entidades.LocacaoComum;
-import br.edu.ifpb.pattengames.entidades.Reserva;
 import br.edu.ifpb.pattengames.exception.LocacaoExistenteException;
 import br.edu.ifpb.pattengames.exception.MultaException;
 import java.text.ParseException;
 import br.edu.ifpb.pattengames.factoy.DaoFactory;
 import br.edu.ifpb.pattengames.factoy.LocacaoFavtoy;
-import br.edu.ifpb.pattengames.model.*;
-import br.edu.ifpb.pattengames.model.BuscaClienteBo;
+import br.edu.ifpb.pattengames.model.CadastrarMultas;
 import br.edu.ifpb.pattengames.model.CadastroLocacaoBo;
-import java.math.BigDecimal;
+import br.edu.ifpb.pattengames.model.DevolucaoBo;
 import java.time.LocalDate;
 import java.time.Month;
-import java.time.format.DateTimeFormatter;
-import java.util.List;
-import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.time.temporal.ChronoUnit;
 
 /**
  *
@@ -37,9 +30,28 @@ import java.util.logging.Logger;
 public class Loader {
 //certo
 
-    public static void main(String[] args) throws ParseException, LocacaoExistenteException {
-        Cliente c = DaoFactory.createFactory(DaoFactory.DAO_BD).criaClienteDao().buscaPorId(3);
-        System.err.println("cliente "+ c);
+    public static void main(String[] args) throws ParseException, LocacaoExistenteException, MultaException {
+         Cliente a = DaoFactory.createFactory(DaoFactory.DAO_BD).criaClienteDao().buscaPorId(4);
+        Jogo j = DaoFactory.createFactory(DaoFactory.DAO_BD).criaJogoDao().buscaPorId(9);
+        
+       // Locacao c = DaoFactory.createFactory(DaoFactory.DAO_BD).criaLocacaoDao().buscaPorId(35);
+        Locacao c = new LocacaoComum();
+      c.setCliente(a);
+       c.setJogo(j);
+       c.setId(48);
+       //c.setTipo(TipoLocacao.COMUM.name());
+    //   c.setDataDevolucao(LocalDate.of(2016, Month.MARCH, 10));
+        CadastroLocacaoBo dd = new CadastroLocacaoBo();
+       //dd.cadastrar(c);
+//        LocalDate re = DaoFactory.createFactory(DaoFactory.DAO_BD).criaLocacaoDao().buscaPorId(42).getDataDevolucao();
+        CadastrarMultas calMulta = new CadastrarMultas();
+       // calMulta.calMulta(c);
+      LocalDate  dataDevolucao = LocalDate.of(2016, Month.MARCH, 11);
+        int diasAtraso = (int) dataDevolucao.until(LocalDate.now(), ChronoUnit.DAYS);
+        System.err.println("aa============ "+diasAtraso );
+       DevolucaoBo s = new DevolucaoBo();
+      
+        System.err.println("devolver "+s.devolucao(c));
         
     }
 
