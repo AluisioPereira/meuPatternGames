@@ -11,6 +11,7 @@ import br.edu.ifpb.pattengames.entidades.Cliente;
 import br.edu.ifpb.pattengames.entidades.Jogo;
 import br.edu.ifpb.pattengames.entidades.Locacao;
 import br.edu.ifpb.pattengames.entidades.LocacaoComum;
+import br.edu.ifpb.pattengames.entidades.Reserva;
 import br.edu.ifpb.pattengames.exception.LocacaoExistenteException;
 import br.edu.ifpb.pattengames.exception.MultaException;
 import java.text.ParseException;
@@ -38,20 +39,22 @@ public class Loader {
         Locacao c = new LocacaoComum();
       c.setCliente(a);
        c.setJogo(j);
-       c.setId(48);
+       c.setId(50);
        //c.setTipo(TipoLocacao.COMUM.name());
     //   c.setDataDevolucao(LocalDate.of(2016, Month.MARCH, 10));
         CadastroLocacaoBo dd = new CadastroLocacaoBo();
-       //dd.cadastrar(c);
+        //dd.cadastrar(c);
 //        LocalDate re = DaoFactory.createFactory(DaoFactory.DAO_BD).criaLocacaoDao().buscaPorId(42).getDataDevolucao();
-        CadastrarMultas calMulta = new CadastrarMultas();
+      //  CadastrarMultas calMulta = new CadastrarMultas();
        // calMulta.calMulta(c);
-      LocalDate  dataDevolucao = LocalDate.of(2016, Month.MARCH, 11);
-        int diasAtraso = (int) dataDevolucao.until(LocalDate.now(), ChronoUnit.DAYS);
-        System.err.println("aa============ "+diasAtraso );
+     // LocalDate  dataDevolucao = LocalDate.of(2016, Month.MARCH, 11);
+       // int diasAtraso = (int) dataDevolucao.until(LocalDate.now(), ChronoUnit.DAYS);
+      //  System.err.println("aa============ "+diasAtraso );
        DevolucaoBo s = new DevolucaoBo();
       
         System.err.println("devolver "+s.devolucao(c));
+        // boolean re = DaoFactory.createFactory(DaoFactory.DAO_BD).criaReservaDao().add(new Reserva(a, j));
+        // System.err.println("reservado "+re);
         
     }
 

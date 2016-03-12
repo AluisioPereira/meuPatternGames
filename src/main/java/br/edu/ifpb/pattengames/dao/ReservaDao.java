@@ -174,6 +174,7 @@ public class ReservaDao implements ReservasDaoIf {
         Jogo j = DaoFactory.createFactory(DaoFactory.DAO_BD).criaJogoDao().buscaPorNome(rs.getString("nomejogo"));
         reserva.setCliente(c);
         reserva.setJogo(j);
+        reserva.setId(rs.getInt("id"));
         return reserva;
     }
 

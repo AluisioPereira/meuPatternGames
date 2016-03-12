@@ -8,12 +8,18 @@ package br.edu.ifpb.pattengames.entidades;
 import br.edu.ifpb.pattengames.state.Alugado;
 import br.edu.ifpb.pattengames.state.Disponivel;
 import br.edu.ifpb.pattengames.state.StateIF;
+import java.util.LinkedList;
+import java.util.List;
+import static javafx.scene.input.KeyCode.T;
+import observadorDeJogo.Observable;
+import observadorDeJogo.Observer;
 
 /**
  *
  * @author José
  */
-public class Jogo {
+public class Jogo implements Observable<Cliente>{
+    	private List<Observer<Cliente>> observadores;
     
     private int id;
     private StateIF estado;
@@ -21,6 +27,7 @@ public class Jogo {
 
     public Jogo() {
         this.estado = new Disponivel();
+        this.observadores = new LinkedList<Observer<Cliente>>();
     }
     
 
@@ -91,6 +98,27 @@ public class Jogo {
     public void devolver(){
         this.estado = estado.devolver();
     }
+
+   @Override
+	public void addObserver(Observer newObserver) {
+		this.observadores.add(newObserver);
+	}
+
+	@Override
+	public void removeObserver(Observer observer) {
+		this.observadores.remove(observer);
+	}
+	
+	public void addChamada(Cliente cliente) {
+		notifyObservers(cliente);
+	}
+
+	@Override
+	public void notifyObservers(Cliente object) {
+		for (Observer observer : observadores) {
+			observer.update(object);
+		}
+	}
 
     
 }

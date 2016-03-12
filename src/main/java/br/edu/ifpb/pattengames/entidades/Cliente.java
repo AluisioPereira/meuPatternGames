@@ -5,11 +5,14 @@
  */
 package br.edu.ifpb.pattengames.entidades;
 
+import br.edu.ifpb.pattengames.model.EnviarEmail;
+import observadorDeJogo.Observer;
+
 /**
  *
  * @author José
  */
-public class Cliente {
+public class Cliente implements Observer<Jogo> {
     
     private int id;
 
@@ -30,7 +33,7 @@ public class Cliente {
     public void setId(int id) {
         this.id = id;
     }
-
+    
     private String nome;
 
     /**
@@ -50,7 +53,7 @@ public class Cliente {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
+    
     private String email;
 
     /**
@@ -70,7 +73,7 @@ public class Cliente {
     public void setEmail(String email) {
         this.email = email;
     }
-
+    
     private String CPF;
 
     /**
@@ -90,11 +93,18 @@ public class Cliente {
     public void setCPF(String CPF) {
         this.CPF = CPF;
     }
-
+    
     @Override
     public String toString() {
         return "Cliente{" + "id=" + id + ", nome=" + nome + ", email=" + email + ", CPF=" + CPF + '}';
     }
-
+    
+    @Override
+    public void update(Jogo object) {
+        System.err.println("enter cli"+this.getEmail());
+        EnviarEmail email = new EnviarEmail();
+        email.enviarEmail(this, object);
+        
+    }
     
 }

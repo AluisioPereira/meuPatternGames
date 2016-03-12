@@ -22,13 +22,20 @@ public class DevolucaoBo {
         if (resultado) {
             System.err.println("pa 1");
             resultado = AlteraSateJogo.AlteraSateJogo(locacao.getJogo());
-            System.err.println("pa 2 "+resultado);
-            if (locacao.getDataDevolucao().until(LocalDate.now(), ChronoUnit.DAYS) >0) {
-                
+            System.err.println("pa 2 " + resultado);
+            if (locacao.getDataDevolucao().until(LocalDate.now(), ChronoUnit.DAYS) > 0) {
+
                 calMulta = new CadastrarMultas();
-                System.err.println("pa 2 "+resultado);
+                System.err.println("pa 2 " + resultado);
                 resultado = calMulta.calMulta(locacao);
             }
+            Notificarcao notificacao = null;
+            if (resultado) {
+                System.err.println("entrou no if not");
+                notificacao = Notificarcao.getInstancia();
+                 notificacao.notificarClientes(locacao.getJogo());
+            }
+           
 
         }
         return resultado;
