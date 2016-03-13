@@ -30,8 +30,9 @@ public class Notificarcao {
             return;
         }
         for (Reserva r : reservas) {
-            Cliente cliente = r.getCliente();
-            cliente.update(jogo);
+            System.err.println("cliente notcicado "+r.getCliente());
+              r.getCliente().update(jogo);
+           // cliente.update(jogo);
         }
     }
 

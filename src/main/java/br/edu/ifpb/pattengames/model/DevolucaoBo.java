@@ -13,6 +13,7 @@ import java.time.temporal.ChronoUnit;
 /**
  *
  * @author José
+ * d
  */
 public class DevolucaoBo {
 
@@ -23,12 +24,14 @@ public class DevolucaoBo {
             System.err.println("pa 1");
             resultado = AlteraSateJogo.AlteraSateJogo(locacao.getJogo());
             System.err.println("pa 2 " + resultado);
-            if (locacao.getDataDevolucao().until(LocalDate.now(), ChronoUnit.DAYS) > 0) {
+            long atraso = locacao.getDataDevolucao().until(LocalDate.now(), ChronoUnit.DAYS);
+            if ( atraso > 0) {
 
                 calMulta = new CadastrarMultas();
                 System.err.println("pa 2 " + resultado);
                 resultado = calMulta.calMulta(locacao);
             }
+            System.err.println("client de"+locacao.getCliente());
             Notificarcao notificacao = null;
             if (resultado) {
                 System.err.println("entrou no if not");

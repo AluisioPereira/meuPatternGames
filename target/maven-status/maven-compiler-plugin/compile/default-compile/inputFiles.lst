@@ -1,11 +1,11 @@
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\factoy\DaoFactory.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\dao\ClienteDao.java
+D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\observadorDeJogo\Observable.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\entidades\MultaAtrasoLocacaoComum.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\model\AlteraSateJogo.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\conexao\DataBaseException.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\model\AtualizarClienteBO.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\model\BuscaJogoBo.java
-D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\model\CalcularMulta.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\dao\MultaDaoIf.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\model\ValidaCPF.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\dao\ClienteDaoIf.java
@@ -18,6 +18,8 @@ D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\model\VerificarCadastroBo.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\conexao\Conexao.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\factoy\DaoFactoryDB.java
+D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\model\Notificarcao.java
+D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\observadorDeJogo\Observer.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\model\BuscaClienteBo.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\factoy\FactoyLocacao.java
 D:\Users\José\Documents\GitHub\meuparttergames\meuPatternGames\src\main\java\br\edu\ifpb\pattengames\contole\NewServlet.java

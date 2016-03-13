@@ -11,8 +11,8 @@ import br.edu.ifpb.pattengames.state.StateIF;
 import java.util.LinkedList;
 import java.util.List;
 import static javafx.scene.input.KeyCode.T;
-import observadorDeJogo.Observable;
-import observadorDeJogo.Observer;
+import br.edu.ifpb.pattengames.observador.Observable;
+import br.edu.ifpb.pattengames.observador.Observer;
 
 /**
  *

@@ -1,4 +1,4 @@
-package observadorDeJogo;
+package br.edu.ifpb.pattengames.observador;
 
 /**
  * Interface que deve ser implementada por qualquer objeto que deseja adicionar

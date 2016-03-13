@@ -6,7 +6,7 @@
 package br.edu.ifpb.pattengames.entidades;
 
 import br.edu.ifpb.pattengames.model.EnviarEmail;
-import observadorDeJogo.Observer;
+import br.edu.ifpb.pattengames.observador.Observer;
 
 /**
  *
