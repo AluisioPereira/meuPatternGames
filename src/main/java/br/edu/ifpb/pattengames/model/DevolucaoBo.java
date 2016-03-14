@@ -13,6 +13,7 @@ import java.time.temporal.ChronoUnit;
 /**
  *
  * @author José
+ * d
  */
 public class DevolucaoBo {
 
@@ -20,17 +21,30 @@ public class DevolucaoBo {
         boolean resultado = DaoFactory.createFactory(DaoFactory.DAO_BD).criaLocacaoDao().remover(locacao);
         CadastrarMultas calMulta = null;
         if (resultado) {
-            System.err.println("pa 1");
+            System.err.println("lod "+locacao.getTipo());
+        
             resultado = AlteraSateJogo.AlteraSateJogo(locacao.getJogo());
-            System.err.println("pa 2 "+resultado);
-            if (locacao.getDataDevolucao().until(LocalDate.now(), ChronoUnit.DAYS) >0) {
-                
+            int at = diasDeAtraso(locacao.getDataDevolucao());
+            System.err.println("ssssss"+locacao.getDataDevolucao()+" dia"+at);
+            if ( at > 0) {
+                System.err.println("if lo"+locacao.getTipo());
+                System.err.println("multa  lklkk");
                 calMulta = new CadastrarMultas();
-                System.err.println("pa 2 "+resultado);
                 resultado = calMulta.calMulta(locacao);
             }
+            Notificarcao notificacao = null;
+            if (resultado) {
+                notificacao = Notificarcao.getInstancia();
+                 notificacao.notificarClientes(locacao.getJogo());
+            }
+           
 
         }
         return resultado;
+    }
+    private int diasDeAtraso(LocalDate data) {
+
+        return (int) LocalDate.now().until(data, ChronoUnit.DAYS);
+
     }
 }
