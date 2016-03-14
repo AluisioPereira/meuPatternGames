@@ -101,7 +101,6 @@ public class Cliente implements Observer<Jogo> {
     
     @Override
     public void update(Jogo object) {
-        System.err.println("enter cli"+this.getEmail());
         EnviarEmail email = new EnviarEmail();
         email.enviarEmail(this, object);
         

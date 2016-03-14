@@ -170,7 +170,7 @@ public class ReservaDao implements ReservasDaoIf {
 
     private Reserva montarLocacao(ResultSet rs) throws SQLException {
         Reserva reserva = new Reserva();
-        Cliente c = DaoFactory.createFactory(DaoFactory.DAO_BD).criaClienteDao().buscaPorCPF(rs.getString("emailcliente"));
+        Cliente c = DaoFactory.createFactory(DaoFactory.DAO_BD).criaClienteDao().buscaPorEmail(rs.getString("emailcliente"));
         Jogo j = DaoFactory.createFactory(DaoFactory.DAO_BD).criaJogoDao().buscaPorNome(rs.getString("nomejogo"));
         reserva.setCliente(c);
         reserva.setJogo(j);

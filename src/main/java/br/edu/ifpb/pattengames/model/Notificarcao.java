@@ -29,10 +29,10 @@ public class Notificarcao {
         if (reservas.isEmpty()) {
             return;
         }
-        for (Reserva r : reservas) {
-            System.err.println("cliente notcicado "+r.getCliente());
-              r.getCliente().update(jogo);
-           // cliente.update(jogo);
+        for (int i=0; i < reservas.size();i++) {
+            System.err.println("jo "+jogo.getNome()+"clie "+reservas.get(i).getCliente());
+            reservas.get(i).getCliente().update(jogo);
+           // c.update(jogo);
         }
     }
 
