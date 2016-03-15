@@ -30,9 +30,12 @@ public class AtualizarCliente extends HttpServlet {
         PrintWriter out = response.getWriter();
         ControladorCLiente controle = new ControladorCLiente();
         boolean result = false;
+        response.sendRedirect("cadastroCliente.jsp");
         Cliente clienteAtualizado = controle.buscarPorCPF(request.getParameter("cpf"));
+//        out.println(clienteAtualizado.toString());
         if (clienteAtualizado != null) {
             clienteAtualizado = atualizarInfo(clienteAtualizado, request);
+            out.println("Chamei esse");
         }
 
         try {
@@ -90,6 +93,7 @@ public class AtualizarCliente extends HttpServlet {
     private Cliente atualizarInfo(Cliente cliente, HttpServletRequest request) {
         cliente.setEmail(request.getParameter("email"));
         cliente.setNome(request.getParameter("nome"));
+        
         return cliente;
     }
 

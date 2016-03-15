@@ -125,7 +125,7 @@
         <section class="seçãoDir" style="float: right; display: none;" id="editar">
             <form class="form-horizontal" action="atualizarcliente" method="post">
                 <fieldset>
-                    <input type="text" name="nome" id="editarCliente">
+                    
                     <div class="form-group">
                         <label class="col-md-2 control-label" for="cpf"></label>
                         <div class="col-md-5">

@@ -174,14 +174,12 @@ public class ClienteDao implements ClienteDaoIf {
         PreparedStatement stat = null;
         try {
             conn = new Conexao();
-            String sql = "UPDATE cliente SET nome = ?, cpf = ?, email = ?"
-                    + "WHERE id = ?";
+            String sql = "UPDATE cliente SET nome = ?, email = ?"
+                    + "WHERE cpf = ?";
             stat = conn.getConnection().prepareStatement(sql);
             stat.setString(1, cliente.getNome());
-            stat.setString(2, cliente.getCPF());
-            stat.setString(3, cliente.getEmail());
-            stat.setInt(4, cliente.getId());
-
+            stat.setString(2, cliente.getEmail());
+            stat.setString(3, cliente.getCPF());
             if (stat.executeUpdate() > 0) {
                 result = true;
             }

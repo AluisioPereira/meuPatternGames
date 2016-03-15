@@ -42,11 +42,7 @@ public class AtualizarClienteBO {
             return false;
         }
 
-        DaoFactoryIF factory = DaoFactory.createFactory(DaoFactory.DAO_BD);
-        Cliente usuarioEmail = factory.criaClienteDao().buscaPorEmail(cliente.getEmail());
-        if (usuarioEmail != null) {
-            throw new EmailExistenteException();
-        }
+       
 
         return result;
     }
