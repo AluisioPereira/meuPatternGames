@@ -64,7 +64,35 @@
             <%@ include file="barraMenu.jsp"%>
         </div>
 
+        <div class="panel panel-default">
 
+<<<<<<< HEAD
+            <div class="panel-body">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-md-offset-10 control-label" for="prependedtext"></label>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon">Pesquise</span>
+                                    <input id="filter" name="pesquise" class="form-control" placeholder="Ex.: nome do cliente" type="text">
+                                </div>
+                                <p class="help-block">Pesquise por informações do cliente</p>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            <section class="seçãoDir" style="float: right; display: ;">
+             <table class="table table-bordered table-hover table-selectable" id="tb">
+                     <thead>
+                <tr class="alert-info text-center">
+                    <th id="tableHeadId" class="text-center">Código</th>
+                    <th id="tableHeadNome"class="text-center">Nome</th>
+                    <th id=""class="text-center">Status</th>
+                    <th>Remover</th>
+                    <th>Editar</th>
+                </tr>
+=======
 
         <section class="seçãoDir" style="float: right;">
             <form class="form-horizontal">
@@ -192,6 +220,7 @@
                         <th>Remover</th>
                         <th>Editar</th>
                     </tr>
+>>>>>>> bada8fa6e4a8a3e1d219f4972a5bc533360d778f
                 </thead>
                 <tbody id="usersTable" class="searchable">
                     <%  BuscaJogoBo busca = new BuscaJogoBo();
@@ -216,9 +245,18 @@
                 </tbody>
 
             </table>
+<<<<<<< HEAD
+                </section >
+            </div>
+        </div>
+                
+        
+<div class="panel panel-default">
+=======
         </section >
 
         <div class="panel panel-default">
+>>>>>>> bada8fa6e4a8a3e1d219f4972a5bc533360d778f
 
             <div class="panel-body" id="client">
                 <form class="form-horizontal">

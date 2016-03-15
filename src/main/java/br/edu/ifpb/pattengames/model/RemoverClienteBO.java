@@ -21,4 +21,7 @@ public class RemoverClienteBO {
     public boolean remover(Cliente cliente) {
         return DaoFactory.createFactory(DaoFactory.DAO_BD).criaClienteDao().remover(cliente);
     }
+    public boolean remover(String cpf) {
+        return DaoFactory.createFactory(DaoFactory.DAO_BD).criaClienteDao().remover(cpf);
+    }
 }

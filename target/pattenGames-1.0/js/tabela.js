@@ -7,7 +7,6 @@
      var vet = [];
     $('#tb tbody').on('click', 'tr', function () {
         var data = table.row( this ).data();
-        alert(data[0]);
         for (var i = 0; i < valor.length; i++){
             if (valor[i] == data[0]){
                 aux = 1;
@@ -18,9 +17,9 @@
                 
                 cont--;
                 $('#delete').val(valor);
+                $('#editarCliente').val(data[0]);
                 $('#cpf').val(data[0]);
                 $('#nome').val(data[1]);
-                $('#codCliente').val("data[1]");
                 $('#email').val(data[2]); 
             }
         }
@@ -29,6 +28,7 @@
             cont++;
 
             $('#delete').val(valor);
+            $('#editarCliente').val(data[0]);
             $('#cpf').val(data[0]);
             $('#nome').val(data[1]);
             $('#email').val(data[2]);        

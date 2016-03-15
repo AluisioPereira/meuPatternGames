@@ -123,8 +123,9 @@
         
 
         <section class="seçãoDir" style="float: right; display: none;" id="editar">
-            <form class="form-horizontal" action="ServletCadastroCliente">
+            <form class="form-horizontal" action="atualizarcliente" method="post">
                 <fieldset>
+                    <input type="text" name="editar" id="editarCliente">
                     <div class="form-group">
                         <label class="col-md-2 control-label" for="cpf"></label>
                         <div class="col-md-5">
@@ -172,7 +173,8 @@
         </section>
         
         <section class="seçãoDir" style="float: right; display: none;" id="excluir">
-            <form class="form-horizontal" action="ServletCadastroCliente" method="post">
+            <form class="form-horizontal" action="excluir" method="post">
+                <input type="text" id="delete" name="delete">
                 <h4> Tem certeza que deseja EXCLUIR o(s) registro(s) selecionado(s)?</h4>
                 <div id="grupo">
                 <input type="button" id="cancelar"  class="btn btn-success" value="Não" onclick="document.getElementById('excluir').style.display='none';">
@@ -184,7 +186,7 @@
 
         <h4>II - Editar ou  Excluir cliente</h4>
 
-        <div class="panel panel-default">
+        <div class="panel panel-default" id="">
 
             <div class="panel-body">
                 <form class="form-horizontal">
