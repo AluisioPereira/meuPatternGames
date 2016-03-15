@@ -52,7 +52,10 @@ br\edu\ifpb\pattengames\state\Disponivel.class
 br\edu\ifpb\pattengames\contole\ControladorCLiente.class
 br\edu\ifpb\pattengames\dao\MultaDao.class
 br\edu\ifpb\pattengames\entidades\MultaAtrasoLocacaoEspecial.class
+<<<<<<< HEAD
 br\edu\ifpb\pattengames\contole\AtualizarCliente.class
+=======
+>>>>>>> bada8fa6e4a8a3e1d219f4972a5bc533360d778f
 br\edu\ifpb\pattengames\model\VerificarCadastroBo.class
 br\edu\ifpb\pattengames\dao\LocacaoDaoIF.class
 br\edu\ifpb\pattengames\entidades\Jogo.class

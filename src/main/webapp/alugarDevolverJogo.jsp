@@ -45,7 +45,7 @@
         <script src="js/tabela_2.js"></script>
         <script src="js/jquery.js"></script>
         <script  src="js/jquery.dataTables.js"></script> 
-        
+
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -66,6 +66,7 @@
 
         <div class="panel panel-default">
 
+<<<<<<< HEAD
             <div class="panel-body">
                 <form class="form-horizontal">
                     <fieldset>
@@ -91,36 +92,171 @@
                     <th>Remover</th>
                     <th>Editar</th>
                 </tr>
+=======
+
+        <section class="seçãoDir" style="float: right;">
+            <form class="form-horizontal">
+                <fieldset>
+
+                    <!-- Form Name -->
+                    <legend>Form Name</legend>
+
+                    <!-- Button Drop Down -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="alugarDevolver">Jogo</label>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <input id="alugarDevolver" name="alugarDevolver" class="form-control" placeholder="Ex.: super mario" type="text" required="">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        ações
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="#">alugar</a></li>
+                                        <li><a href="#">devolver</a></li>
+                                        <li><a href="#">observar</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </section>
+
+
+
+
+
+
+
+        <section class="seçãoDir" style="float: right;">
+            <form class="form-horizontal" action="">
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-md-offset-0 control-label" for="cpf"></label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <form action="">
+                                    <span class="input-group-addon icon-keyboard"> CPF</span>
+                                    <input id="cpf" name="cpf" class="form-control" placeholder="Ex.: 19294954543" type="text">
+                                    <button id="cpf" name="cpf" class="btn btn-success">Buscar</button>
+                                </form>
+                            </div>
+                            <p class="help-block">Informe e valide o CPF do cliente</p>
+                        </div>
+
+                        <label class="col-md-1 control-label" for="nomeJogo"></label>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <form action="">
+                                    <span class="input-group-addon icon-keyboard"> Jogo</span>
+                                    <input id="jogo" name="jogo" class="form-control" placeholder="Ex.: super mário" type="text">
+                                    <button id="nomeJogo" name="nomeJogo" class="btn btn-success">Buscar</button>
+                                </form>
+                            </div>
+                            <p class="help-block">Informe o nome do jogo</p>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="col-md-offset-0 control-label" for="alugarJogo"></label>
+                        <div class="col-md-4">
+                            <button id="alugarJogo" name="AlugarJogo" class="btn btn-primary">Alugar jogo</button>
+                        </div>
+                    </div>
+
+
+                </fieldset>
+            </form>
+        </section>
+        <hr>
+
+        <section class="seçãoDir" style="float: right;">
+            <form class="form-horizontal">
+                <fieldset>
+
+                    <!-- Form Name -->
+                    <legend>II- Devolver jogo</legend>
+
+                    <!-- Prepended text-->
+                    <div class="form-group">
+                        <label class="col-md-offset-0 control-label" for="nomeJogo"></label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <span class="input-group-addon icon-keyboard"> Jogo</span>
+                                <input id="jogo" name="jogo" class="form-control" placeholder="Ex.: super mário" type="text">
+                                <button id="nomeJogo" name="nomeJogo" class="btn btn-success">Buscar</button>
+
+                            </div>
+                            <p class="help-block">Informe o nome do jogo</p>
+                        </div>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="form-group">
+                        <label class="col-md-offset-0 control-label" for="devolverJogo"></label>
+                        <div class="col-md-4">
+                            <button id="devolverJogo" name="devolverJogo" class="btn btn-primary">Devolver jogo</button>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </section>
+
+
+        <hr>
+        <section class="seçãoDir" style="float: right; display: ">
+            <table class="table table-bordered table-hover table-selectable" id="tb">
+                <thead>
+                    <tr class="alert-info text-center">
+                        <th id="tableHeadId" class="text-center">Código</th>
+                        <th id="tableHeadNome"class="text-center">Nome</th>
+                        <th id=""class="text-center">Status</th>
+                        <th>Remover</th>
+                        <th>Editar</th>
+                    </tr>
+>>>>>>> bada8fa6e4a8a3e1d219f4972a5bc533360d778f
                 </thead>
                 <tbody id="usersTable" class="searchable">
                     <%  BuscaJogoBo busca = new BuscaJogoBo();
                         List<Jogo> allGame = busca.buscarTodos();
-                                     
-                        for(Jogo j: allGame){%>
-                <tr >
-                    <td ><%=j.getId()%></td>
-                    <td ><%=j.getNome()%></td>
-                    <td ><%=j.getEstado().toString()%></td>
-                    
-                   
-                    
-                     
-                    <td class="text-center"><button id="salvar" name="salvar" class="btn btn-success" onclick="document.getElementById('client').style.display='block';">Busc Client</button></td>
-                    <td class="text-center"><button id="salvar" name="salvar" class="btn btn-success" onclick="document.getElementById('novo').style.display='block';">Devolver</button></td>
 
-                        
-                    
-                </tr>
-                <%}%>
+                        for (Jogo j : allGame) {%>
+                    <tr >
+                        <td ><%=j.getId()%></td>
+                        <td ><%=j.getNome()%></td>
+                        <td ><%=j.getEstado().toString()%></td>
+
+
+
+
+                        <td class="text-center"><button id="salvar" name="salvar" class="btn btn-success" onclick="document.getElementById('client').style.display = 'block';">Busc Client</button></td>
+                        <td class="text-center"><button id="salvar" name="salvar" class="btn btn-success" onclick="document.getElementById('novo').style.display = 'block';">Devolver</button></td>
+
+
+
+                    </tr>
+                    <%}%>
                 </tbody>
 
             </table>
+<<<<<<< HEAD
                 </section >
             </div>
         </div>
                 
         
 <div class="panel panel-default">
+=======
+        </section >
+
+        <div class="panel panel-default">
+>>>>>>> bada8fa6e4a8a3e1d219f4972a5bc533360d778f
 
             <div class="panel-body" id="client">
                 <form class="form-horizontal">
@@ -138,48 +274,43 @@
                     </fieldset>
                 </form>
 
-               <section >         <!-- Table Usuários-->
-            <table class="table table-bordered table-hover table-selectable" id="tb1">
-                <thead>
-                <tr class="alert-info text-center">
-                    <th id="tableHeadId" class="text-center">CPF</th>
-                    <th id="tableHeadNome"class="text-center">Nome</th>
-                    <th id="tableHeadEmail" class="text-center">E-mail</th> 
-                    <th>Remover</th>
-                    <th>Editar</th>
-                </tr>
-                </thead>
-                <tbody id="usersTable" class="searchable">
-                                <%  
-                                    
-                                    BuscaClienteBo busca2 = new BuscaClienteBo();
-                                    List<Cliente> allUser = busca2.buscarTodos();
-                                     
-                        for(Cliente c: allUser){%>
-                <tr >
-                    <td ><%=c.getId()%></td>
-                    <td ><%=c.getNome()%></td>
-                    <td ><%=c.getCPF()%></td>
-                    
-                     
-                    <td><button id="salvar" name="salvar" class="btn btn-success" onclick="document.getElementById('aluguel').style.display='block';">Prosseguir</button></td>
-                    <td><button id="salvar" name="salvar" class="btn btn-success" onclick="document.getElementById('client').style.display='none';">Cancelar</button></td>
+                <section >         <!-- Table Usuários-->
+                    <table class="table table-bordered table-hover table-selectable" id="tb1">
+                        <thead>
+                            <tr class="alert-info text-center">
+                                <th id="tableHeadId" class="text-center">CPF</th>
+                                <th id="tableHeadNome"class="text-center">Nome</th>
+                                <th id="tableHeadEmail" class="text-center">E-mail</th> 
+                                <th>Remover</th>
+                                <th>Editar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersTable" class="searchable">
+                            <%
 
-                        
-                    
-                </tr>
-                <%}%>
-                </tbody>
+                                BuscaClienteBo busca2 = new BuscaClienteBo();
+                                List<Cliente> allUser = busca2.buscarTodos();
 
-            </table>
-               </section>
+                                for (Cliente c : allUser) {%>
+                            <tr >
+                                <td ><%=c.getId()%></td>
+                                <td ><%=c.getNome()%></td>
+                                <td ><%=c.getCPF()%></td>
+                                <td><button id="salvar" name="salvar" class="btn btn-success" onclick="document.getElementById('aluguel').style.display = 'block';">Prosseguir</button></td>
+                                <td><button id="salvar" name="salvar" class="btn btn-success" onclick="document.getElementById('client').style.display = 'none';">Cancelar</button></td>
+                            </tr>
+                            <%}%>
+                        </tbody>
+
+                    </table>
+                </section>
 
 
             </div>
 
         </div> <!-- fim painel -->   
-        <section class="seçãoDir" style="float: right; display: ;" id="aluguel">
-            
+        <section class="seçãoDir" style="float: right; display: " id="aluguel">
+
             <form class="form-horizontal" action="ServletCadastroCliente" >
                 <fieldset>
                     <div class="form-group">
@@ -246,7 +377,7 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label" for="salvar"></label>
                         <div class="col-md-4">
-                            <input type="button" id="cancelar"  class="btn btn-success" value="Cancelar" onclick="document.getElementById('aluguel').style.display='none';">
+                            <input type="button" id="cancelar"  class="btn btn-success" value="Cancelar" onclick="document.getElementById('aluguel').style.display = 'none';">
                             <button id="salvar" name="salvar" class="btn btn-success">Cadastrar</button>
                         </div>
                     </div>
@@ -255,7 +386,7 @@
             </form>
         </section>
 
-       
+
 
 
         <%@ include file="rodape.jsp" %>
@@ -275,19 +406,19 @@
         <script src="js/custom.js"></script> 
         <!-- contraste- js file-->
         <script src="js/file.js"></script>
-                <script type="text/javascript">
-            //função que faz o filtro digitando no formulário de busca dos usuários
-            $(document).ready(function () {
-                (function ($) {
-                    $('#filter').keyup(function () {
-                        var rex = new RegExp($(this).val(), 'i');
-                        $('.searchable tr').hide();
-                        $('.searchable tr').filter(function () {
-                            return rex.test($(this).text());
-                        }).show();
-                    });
-                }(jQuery));
-            });
+        <script type="text/javascript">
+                                //função que faz o filtro digitando no formulário de busca dos usuários
+                                $(document).ready(function () {
+                                    (function ($) {
+                                        $('#filter').keyup(function () {
+                                            var rex = new RegExp($(this).val(), 'i');
+                                            $('.searchable tr').hide();
+                                            $('.searchable tr').filter(function () {
+                                                return rex.test($(this).text());
+                                            }).show();
+                                        });
+                                    }(jQuery));
+                                });
 
         </script>
     </body>

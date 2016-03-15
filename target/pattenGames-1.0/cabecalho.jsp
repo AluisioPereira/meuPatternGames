@@ -27,7 +27,7 @@
                     <!-- start header bottom -->
                     <div class="header_bottom">
                         <div class="header_bottom_left">
-                            <a href="Home.jsp"><img style="width: 13%; height: 5%;" src="img/logoPG.png" alt="img"></a>
+                            <a href="index.html"><img style="width: 13%; height: 5%;" src="img/logoPG.png" alt="img"></a>
                             <span style="font-family: initial; font-size: 30px; color:#3366ff;"><strong><h2>Compra, venda e locação de jogos!</h2></strong></span>
                         </div>                   
                     </div><!-- End header bottom -->
