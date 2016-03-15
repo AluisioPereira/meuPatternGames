@@ -32,12 +32,13 @@
                 <img src="img/Fifa2015.jpg" alt="img"><span>Pes2015<br>Venda R$:156,00</span>
             </div>
         </section> 
+        <h3>Wii</h3>
         <section class="seçãoEsq">
             <div class="jogoEsq">
-                <img src="img/RatchetLank.jpg" alt="img"><span>RatchetLank<br>Venda R$:147,00</span>
+                <img src="img/wii/01.jpg" alt="img"><span>Just Dance 2016<br>Venda R$:147,00</span>
             </div>
             <div class="jogoDir">
-                <img src="img/Fifa2015.jpg" alt="img"><span>Pes2015<br>Venda R$:156,00</span>
+                <img src="img/wii/02.jpg" alt="img"><span>Pes2015<br>Venda R$:156,00</span>
             </div>
 
             <div class="jogoEsq">
