@@ -11,6 +11,7 @@ import br.edu.ifpb.pattengames.dao.JogoDaoIf;
 import br.edu.ifpb.pattengames.entidades.Jogo;
 import br.edu.ifpb.pattengames.entidades.Locacao;
 import br.edu.ifpb.pattengames.exception.LocacaoExistenteException;
+import br.edu.ifpb.pattengames.exception.MultaException;
 import br.edu.ifpb.pattengames.factoy.DaoFactory;
 import br.edu.ifpb.pattengames.factoy.DaoFactoryIF;
 
@@ -23,7 +24,7 @@ public class CadastroLocacaoBo {
     public CadastroLocacaoBo() {
     }
 
-    public boolean cadastrar(Locacao locacao) throws LocacaoExistenteException {
+    public boolean cadastrar(Locacao locacao) throws LocacaoExistenteException, MultaException {
         DaoFactoryIF factory = DaoFactory.createFactory(DaoFactory.DAO_BD);
 
         if (locacao.getDataDevolucao() == null) {
@@ -41,11 +42,13 @@ public class CadastroLocacaoBo {
         if (locacao.getTipo() == null) {
             return false;
         }
-
-        Jogo buscarExistente = DaoFactory.createFactory(DaoFactory.DAO_BD).criaJogoDao().buscaPorId(locacao.getJogo().getId());
-        if (buscarExistente != null) {
+        if (VerificarPendeciasCliente.execute(locacao.getCliente().getId())) {
+            throw new MultaException();
+        }
+        Locacao locacaoExistente = DaoFactory.createFactory(DaoFactory.DAO_BD).criaLocacaoDao().buscaPorIdJogo(locacao.getJogo().getId());
+        if (locacaoExistente != null) {
             throw new LocacaoExistenteException();
-            
+
         }
         if (factory.criaLocacaoDao().add(locacao)) {
             ClienteDaoIf dao = new ClienteDao();

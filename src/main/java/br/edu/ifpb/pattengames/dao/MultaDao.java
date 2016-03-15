@@ -17,6 +17,7 @@ import java.net.URISyntaxException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -91,21 +92,21 @@ public class MultaDao implements MultaDaoIf {
     }
 
     @Override
-    public Map buscaCliente(Integer idCliente) {
+    public List<BigDecimal> buscarCliente(Integer idCliente) {
         PreparedStatement pst;
 
         String consulta = "SELECT * FROM MULTA WHERE idcliente = ?";
-        Map result = new HashMap();
+         List<BigDecimal> resultado = new ArrayList<>();
         try {
             conn = new Conexao();
             pst = conn.getConnection().prepareStatement(consulta);
             pst.setInt(1, idCliente);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
-                Cliente cliente = DaoFactory.createFactory(DaoFactory.DAO_BD).criaClienteDao().buscaPorId(rs.getInt("id"));
+                Cliente cliente = DaoFactory.createFactory(DaoFactory.DAO_BD).criaClienteDao().buscaPorId(rs.getInt("idcliente"));
                 BigDecimal multa = new BigDecimal(rs.getDouble("multa"), MathContext.UNLIMITED);
-                result.containsKey(cliente.getNome());
-                result.containsValue(multa);
+                resultado.add(multa);
+                
             }
 
             conn.closeAll(pst);
@@ -115,7 +116,7 @@ public class MultaDao implements MultaDaoIf {
             Logger.getLogger(JogoDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return result;
+        return resultado;
 
     }
 

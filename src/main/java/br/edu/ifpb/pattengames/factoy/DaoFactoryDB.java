@@ -11,6 +11,8 @@ import br.edu.ifpb.pattengames.dao.JogoDao;
 import br.edu.ifpb.pattengames.dao.JogoDaoIf;
 import br.edu.ifpb.pattengames.dao.LocacaoDao;
 import br.edu.ifpb.pattengames.dao.LocacaoDaoIF;
+import br.edu.ifpb.pattengames.dao.MultaDao;
+import br.edu.ifpb.pattengames.dao.MultaDaoIf;
 import br.edu.ifpb.pattengames.dao.ReservaDao;
 import br.edu.ifpb.pattengames.dao.ReservasDaoIf;
 
@@ -37,6 +39,9 @@ public class DaoFactoryDB implements DaoFactoryIF {
 
     public ReservasDaoIf criaReservaDao() {
         return new ReservaDao();
+    }
+    public MultaDaoIf criaMultaDao(){
+        return new MultaDao();
     }
 
 }

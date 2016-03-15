@@ -24,6 +24,10 @@ import javax.mail.internet.MimeMessage;
  */
 public class EnviarEmail {
 
+    public EnviarEmail() {
+    }
+    
+
     /**
      * @param args the command line arguments
      */

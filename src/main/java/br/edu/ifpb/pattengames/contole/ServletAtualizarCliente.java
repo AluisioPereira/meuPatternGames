@@ -39,13 +39,14 @@ public class ServletAtualizarCliente extends HttpServlet {
         boolean result = false;
         Cliente clienteAtualizado = controle.buscarPorCPF(request.getParameter("cpf"));
         if (clienteAtualizado != null) {
-            clienteAtualizado = atualizarInfo(request);
+            clienteAtualizado = atualizarInfo(clienteAtualizado, request);
         }
 
         try {
             result = controle.atualizar(clienteAtualizado);
         } catch (EmailExistenteException ex) {
             Logger.getLogger(ServletAtualizarCliente.class.getName()).log(Level.SEVERE, null, ex);
+            request.setAttribute("clienteAtualizado", result);
         }
         if (result) {
             request.setAttribute("clienteAtualizado", result);
@@ -93,8 +94,10 @@ public class ServletAtualizarCliente extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private Cliente atualizarInfo(HttpServletRequest request) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private Cliente atualizarInfo(Cliente cliente, HttpServletRequest request) {
+        cliente.setEmail(request.getParameter("email"));
+        cliente.setNome(request.getParameter("nome"));
+        return cliente;
     }
 
 }

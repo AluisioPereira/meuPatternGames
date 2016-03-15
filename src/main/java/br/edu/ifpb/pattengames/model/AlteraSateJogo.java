@@ -5,21 +5,17 @@
  */
 package br.edu.ifpb.pattengames.model;
 
-import br.edu.ifpb.pattengames.entidades.Cliente;
+import br.edu.ifpb.pattengames.entidades.Jogo;
 import br.edu.ifpb.pattengames.factoy.DaoFactory;
 
 /**
  *
  * @author José
  */
-public class ExclurClienteBo {
-    public  boolean excluirCliente(Cliente Cliente){
-        
-      return DaoFactory.createFactory(DaoFactory.DAO_BD).criaClienteDao().remover(Cliente);
-    
-    
-}
-    
-        
+public class AlteraSateJogo {
+    public static boolean AlteraSateJogo(Jogo jogo){
+        jogo.devolver();
+        return  DaoFactory.createFactory(DaoFactory.DAO_BD).criaJogoDao().alterar(jogo);
+    }
     
 }

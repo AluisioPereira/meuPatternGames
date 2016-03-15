@@ -9,6 +9,7 @@ import br.edu.ifpb.pattengames.entidades.Cliente;
 import br.edu.ifpb.pattengames.entidades.Jogo;
 import br.edu.ifpb.pattengames.entidades.Locacao;
 import br.edu.ifpb.pattengames.exception.LocacaoExistenteException;
+import br.edu.ifpb.pattengames.exception.MultaException;
 import br.edu.ifpb.pattengames.factoy.DaoFactory;
 import br.edu.ifpb.pattengames.factoy.LocacaoFavtoy;
 import br.edu.ifpb.pattengames.model.BuscaClienteBo;
@@ -61,8 +62,10 @@ public class ServletCadastroLocacao extends HttpServlet {
             }
         } catch (LocacaoExistenteException ex) {
             Logger.getLogger(ServletCadastroLocacao.class.getName()).log(Level.SEVERE, null, ex);
-            request.setAttribute("idjojoLocado", locacao.getJogo().getId());
-            response.sendRedirect("jogoLocado.jsp");
+            response.sendRedirect("jogoLocado.html");
+        } catch (MultaException ex) {
+            response.sendRedirect("IsMulta.html");
+
         }
 
     }
@@ -119,8 +122,8 @@ public class ServletCadastroLocacao extends HttpServlet {
         Locacao l = LocacaoFavtoy.createFactory(LocacaoFavtoy.LOCACAO).criarLocacao();
         if (request.getParameter("cpf") != null) {
             cpf = request.getParameter("cpf");
-            ControladorCLiente   controle = new ControladorCLiente();
-            
+            ControladorCLiente controle = new ControladorCLiente();
+
             Cliente cliente = controle.buscarPorCPF(cpf);
             Jogo jogo = DaoFactory.createFactory(DaoFactory.DAO_BD).criaJogoDao().buscaPorNome(request.getParameter("nomejogo"));
             l.setCliente(cliente);
