@@ -30,4 +30,6 @@ public interface ClienteDaoIf {
 
     public List<Cliente> buscarTodos();
 
+    public boolean remover(String cpf);
+
 }

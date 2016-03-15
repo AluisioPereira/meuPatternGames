@@ -64,127 +64,26 @@
             <%@ include file="barraMenu.jsp"%>
         </div>
 
+        <div class="panel panel-default">
 
-
-        <section class="seçãoDir" style="float: right;">
-        <form class="form-horizontal">
-            <fieldset>
-
-                <!-- Form Name -->
-                <legend>Form Name</legend>
-
-                <!-- Button Drop Down -->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="alugarDevolver">Jogo</label>
-                    <div class="col-md-6">
-                        <div class="input-group">
-                            <input id="alugarDevolver" name="alugarDevolver" class="form-control" placeholder="Ex.: super mario" type="text" required="">
-                            <div class="input-group-btn">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                    ações
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu pull-right">
-                                    <li><a href="#">alugar</a></li>
-                                    <li><a href="#">devolver</a></li>
-                                    <li><a href="#">observar</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </fieldset>
-        </form>
-        </section>
-
-
-
-
-
-
-
-        <section class="seçãoDir" style="float: right;">
-        <form class="form-horizontal" action="">
-            <fieldset>
-                        <div class="form-group">
-                            <label class="col-md-offset-0 control-label" for="cpf"></label>
-                            <div class="col-md-4">
-                                <div class="input-group">
-                                    <form action="">
-                                        <span class="input-group-addon icon-keyboard"> CPF</span>
-                                        <input id="cpf" name="cpf" class="form-control" placeholder="Ex.: 19294954543" type="text">
-                                        <button id="cpf" name="cpf" class="btn btn-success">Buscar</button>
-                                    </form>
-                                </div>
-                                <p class="help-block">Informe e valide o CPF do cliente</p>
-                            </div>
-
-                            <label class="col-md-1 control-label" for="nomeJogo"></label>
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    <form action="">
-                                        <span class="input-group-addon icon-keyboard"> Jogo</span>
-                                        <input id="jogo" name="jogo" class="form-control" placeholder="Ex.: super mário" type="text">
-                                        <button id="nomeJogo" name="nomeJogo" class="btn btn-success">Buscar</button>
-                                    </form>
-                                </div>
-                                <p class="help-block">Informe o nome do jogo</p>
-                            </div>
-                        </div>
-
-
-                        <div class="form-group">
-                            <label class="col-md-offset-0 control-label" for="alugarJogo"></label>
-                            <div class="col-md-4">
-                                <button id="alugarJogo" name="AlugarJogo" class="btn btn-primary">Alugar jogo</button>
-                            </div>
-                        </div>
-
-
-            </fieldset>
-        </form>
-        </section>
-                <hr>
-                
-                <section class="seçãoDir" style="float: right;">
+            <div class="panel-body">
                 <form class="form-horizontal">
                     <fieldset>
-
-                        <!-- Form Name -->
-                        <legend>II- Devolver jogo</legend>
-
-                        <!-- Prepended text-->
                         <div class="form-group">
-                            <label class="col-md-offset-0 control-label" for="nomeJogo"></label>
-                            <div class="col-md-4">
+                            <label class="col-md-offset-10 control-label" for="prependedtext"></label>
+                            <div class="col-md-6">
                                 <div class="input-group">
-                                    <span class="input-group-addon icon-keyboard"> Jogo</span>
-                                    <input id="jogo" name="jogo" class="form-control" placeholder="Ex.: super mário" type="text">
-                                    <button id="nomeJogo" name="nomeJogo" class="btn btn-success">Buscar</button>
-
+                                    <span class="input-group-addon">Pesquise</span>
+                                    <input id="filter" name="pesquise" class="form-control" placeholder="Ex.: nome do cliente" type="text">
                                 </div>
-                                <p class="help-block">Informe o nome do jogo</p>
+                                <p class="help-block">Pesquise por informações do cliente</p>
                             </div>
                         </div>
-
-                        <!-- Button -->
-                        <div class="form-group">
-                            <label class="col-md-offset-0 control-label" for="devolverJogo"></label>
-                            <div class="col-md-4">
-                                <button id="devolverJogo" name="devolverJogo" class="btn btn-primary">Devolver jogo</button>
-                            </div>
-                        </div>
-
                     </fieldset>
                 </form>
-                </section>
-           
-        
-        <hr>
-       <section class="seçãoDir" style="float: right; display: ;">
-        <table class="table table-bordered table-hover table-selectable" id="tb">
-                <thead>
+            <section class="seçãoDir" style="float: right; display: ;">
+             <table class="table table-bordered table-hover table-selectable" id="tb">
+                     <thead>
                 <tr class="alert-info text-center">
                     <th id="tableHeadId" class="text-center">Código</th>
                     <th id="tableHeadNome"class="text-center">Nome</th>
@@ -217,6 +116,9 @@
 
             </table>
                 </section >
+            </div>
+        </div>
+                
         
 <div class="panel panel-default">
 

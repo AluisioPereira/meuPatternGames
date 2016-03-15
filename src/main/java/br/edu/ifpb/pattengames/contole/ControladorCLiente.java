@@ -41,6 +41,12 @@ public class ControladorCLiente {
         }
         return removerClienteBO.remover(cliente);
     }
+    public boolean remover(String cpf) {
+        if (removerClienteBO == null) {
+            removerClienteBO = new RemoverClienteBO();
+        }
+        return removerClienteBO.remover(cpf);
+    }
 
     public Cliente buscaPorNome(String nome) {
         if (buscaCliente == null) {

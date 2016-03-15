@@ -5,6 +5,7 @@
  */
 package br.edu.ifpb.pattengames.contole;
 
+import br.edu.ifpb.pattengames.model.RemoverClienteBO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -32,7 +33,13 @@ public class ServletExcluirCliente extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String cpf = request.getParameter("valor");
+        String[] cpf = request.getParameter("delete").split(",");
+        ControladorCLiente c = new ControladorCLiente();
+        for (String string : cpf) {
+            c.remover(string);
+        }
+        response.sendRedirect("cadastroCliente.jsp");
+        
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");

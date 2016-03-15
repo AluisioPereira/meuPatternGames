@@ -253,4 +253,34 @@ public class ClienteDao implements ClienteDaoIf {
         return c;
     }
 
+   @Override
+    public boolean remover(String cpf) {
+        // certo
+        boolean result = false;
+        PreparedStatement ps = null;
+
+        try {
+            conn = new Conexao();
+            String sql = "DELETE FROM Cliente WHERE cpf = ?";
+            ps = conn.getConnection().prepareStatement(sql);
+            ps.setString(1, cpf);
+            if (ps.executeUpdate() > 0) {
+                result = true;
+            }
+        } catch (SQLException | IOException | ClassNotFoundException e) {
+            System.err.println("Erro " + e.getMessage());
+            Logger.getLogger(ClienteDao.class.getName()).log(Level.SEVERE, null, e);
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ClienteDao.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                conn.closeAll(ps);
+            } catch (DataBaseException ex) {
+                Logger.getLogger(ClienteDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        return result;
+    }
+
 }
