@@ -182,7 +182,7 @@
            
         
         <hr>
-       <section class="seçãoDir" style="float: right; display: ;">
+       <section class="seçãoDir" style="float: right; display: ">
         <table class="table table-bordered table-hover table-selectable" id="tb">
                 <thead>
                 <tr class="alert-info text-center">
@@ -276,7 +276,7 @@
             </div>
 
         </div> <!-- fim painel -->   
-        <section class="seçãoDir" style="float: right; display: ;" id="aluguel">
+        <section class="seçãoDir" style="float: right; display: " id="aluguel">
             
             <form class="form-horizontal" action="ServletCadastroCliente" >
                 <fieldset>
