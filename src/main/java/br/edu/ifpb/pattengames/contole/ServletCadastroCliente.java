@@ -1,14 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package br.edu.ifpb.pattengames.contole;
 
 import br.edu.ifpb.pattengames.entidades.Cliente;
 import br.edu.ifpb.pattengames.exception.EmailExistenteException;
 import br.edu.ifpb.pattengames.model.BuscaClienteBo;
-import br.edu.ifpb.pattengames.model.CadastroClienteBO;
 import br.edu.ifpb.pattengames.model.ValidaCPF;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -45,7 +40,8 @@ public class ServletCadastroCliente extends HttpServlet {
         PrintWriter out = response.getWriter();
         //  out.print("passou 1"+request.getParameter("cpf"));
         Cliente cliente = montarUsuario(request);
-        out.print("passou 2 " + cliente.toString());
+        response.sendRedirect("cadastroCliente.jsp");
+
 
    //     Map<String, String> resultadoVerificacao = VerificarCadastroBo.execute(cliente);
         // out.print("vvvv"+resultadoVerificacao.get("cpf"));
@@ -123,15 +119,15 @@ public class ServletCadastroCliente extends HttpServlet {
     private Cliente montarUsuario(HttpServletRequest request) {
 
         Cliente cliente = new Cliente();
-        if (request.getParameter("nome") != null) {
-            cliente.setNome(request.getParameter("nome"));
+        if (request.getParameter("nomec") != null) {
+            cliente.setNome(request.getParameter("nomec"));
         }
-        if (request.getParameter("email") != null) {
-            cliente.setEmail(request.getParameter("email"));
+        if (request.getParameter("emailc") != null) {
+            cliente.setEmail(request.getParameter("emailc"));
         }
         ValidaCPF ValidaCPF = new ValidaCPF();
-        if (ValidaCPF.validaCPF(request.getParameter("cpf"))) {
-            cliente.setCPF(request.getParameter("cpf"));
+        if (ValidaCPF.validaCPF(request.getParameter("cpfc"))) {
+            cliente.setCPF(request.getParameter("cpfc"));
         }
         return cliente;
     }

@@ -80,7 +80,7 @@
                         <div class="col-md-5">
                             <div class="input-group">
                                 <span class="input-group-addon">CPF</span>
-                                <input  pattern="\d{11}" id="cpfc" name="cpf" class="form-control" placeholder="Ex.: 10028243561" type="text">
+                                <input  pattern="\d{11}" id="cpfc" name="cpfc" class="form-control" placeholder="Ex.: 10028243561" type="text">
                             </div>
                             <p class="help-block">Informe o CPF do cliente</p>
                         </div>
@@ -102,7 +102,7 @@
                         <div class="col-md-5">
                             <div class="input-group">
                                 <span class="input-group-addon">E-mail</span>
-                                <input id="emailc" name="email" class="form-control" placeholder="Ex.: seunome@dominio.com" type="email">
+                                <input id="emailc" name="emailc" class="form-control" placeholder="Ex.: seunome@dominio.com" type="email">
                             </div>
                             <p class="help-block">Informe o E-mail do cliente</p>
                         </div>
@@ -125,7 +125,7 @@
         <section class="seçãoDir" style="float: right; display: none;" id="editar">
             <form class="form-horizontal" action="atualizarcliente" method="post">
                 <fieldset>
-                    <input type="text" name="editar" id="editarCliente">
+                    <input type="text" name="nome" id="editarCliente">
                     <div class="form-group">
                         <label class="col-md-2 control-label" for="cpf"></label>
                         <div class="col-md-5">
