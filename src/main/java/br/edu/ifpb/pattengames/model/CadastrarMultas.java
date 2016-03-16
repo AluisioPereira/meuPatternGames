@@ -22,14 +22,15 @@ public class CadastrarMultas {
 
     public boolean calMulta(Locacao locacao) {
         BigDecimal multa;
-        if (locacao.getTipo().equals(TipoLocacao.COMUM)) {
-            System.err.println("et multa");
-            MultaAtrasoLocacaoComum locComum = new MultaAtrasoLocacaoComum();
+        if (TipoLocacao.COMUM.name()==locacao.getTipo() ) {
+            System.err.println("losssss "+locacao.getTipo());
+              MultaAtrasoLocacaoComum locComum = new MultaAtrasoLocacaoComum();
             multa = locComum.calcularMulta(locacao.getDataLocacao());
-
         } else {
-            MultaAtrasoLocacaoEspecial locEspecial = new MultaAtrasoLocacaoEspecial();
+            System.err.println("lo especial  "+locacao.getTipo());
+           MultaAtrasoLocacaoEspecial locEspecial = new MultaAtrasoLocacaoEspecial();
             multa = locEspecial.calcularMulta(locacao.getDataDevolucao());
+            
         }
 
         return DaoFactory.createFactory(DaoFactory.DAO_BD).criaMultaDao().add(locacao.getCliente().getId(), multa);

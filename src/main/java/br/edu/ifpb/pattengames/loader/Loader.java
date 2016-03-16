@@ -43,27 +43,29 @@ public class Loader {
         Locacao l = LocacaoFavtoy.createFactory(LocacaoFavtoy.LOCACAO).criarLocacao();
       l.setCliente(a);
        l.setJogo(jogo);
-       l.setId(53);
-       //c.setTipo(TipoLocacao.COMUM.name());
-    //   l.setDataDevolucao(LocalDate.of(2016, Month.MARCH, 10));
+     //  l.setId(63);
+     // l.setTipo(TipoLocacao.COMUM.name());
+     // l.setDataLocacao(LocalDate.of(2016, Month.MARCH, 7));
+     //  l.setDataDevolucao(LocalDate.of(2016, Month.MARCH, 8));
         CadastroLocacaoBo dd = new CadastroLocacaoBo();
         ReservarJogoBo ee = new ReservarJogoBo();
        // boolean rrr = ee.reservaJogo(a, jogo);
-       // dd.cadastrar(l);
+     // dd.cadastrar(l);
         Notificarcao re = Notificarcao.getInstancia();
         //re.notificarClientes(jogo);
          System.err.println("====================== ");
          //List<Reserva> reservas = DaoFactory.createFactory(DaoFactory.DAO_BD).criaReservaDao().buscarJogo(jogo.getNome());
        //  System.err.println("cff "+reservas.get(0).getJogo());
 //        LocalDate re = DaoFactory.createFactory(DaoFactory.DAO_BD).criaLocacaoDao().buscaPorId(42).getDataDevolucao();
-      //  CadastrarMultas calMulta = new CadastrarMultas();
+        CadastrarMultas calMulta = new CadastrarMultas();
        // calMulta.calMulta(l);
      // LocalDate  dataDevolucao = LocalDate.of(2016, Month.MARCH, 11);
        // int diasAtraso = (int) dataDevolucao.until(LocalDate.now(), ChronoUnit.DAYS);
        // System.err.println("aa============ "+l.getJogo().getNome() );
        DevolucaoBo s = new DevolucaoBo();
+        Locacao ld = DaoFactory.createFactory(0).criaLocacaoDao().buscaPorId(77);
       
-        System.err.println("devolver "+s.devolucao(l));
+      System.err.println("devolver "+s.devolucao(ld));
         // boolean re = DaoFactory.createFactory(DaoFactory.DAO_BD).criaReservaDao().add(new Reserva(a, jogo));
         // System.err.println("reservado "+re);
         

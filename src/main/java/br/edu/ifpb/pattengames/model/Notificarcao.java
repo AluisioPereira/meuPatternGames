@@ -24,13 +24,11 @@ public class Notificarcao {
     }
 
     public void notificarClientes(Jogo jogo) {
-        System.err.println("notificou");
         List<Reserva> reservas = DaoFactory.createFactory(DaoFactory.DAO_BD).criaReservaDao().buscarJogo(jogo.getNome());
         if (reservas.isEmpty()) {
             return;
         }
         for (int i=0; i < reservas.size();i++) {
-            System.err.println("jo "+jogo.getNome()+"clie "+reservas.get(i).getCliente());
             reservas.get(i).getCliente().update(jogo);
            // c.update(jogo);
         }
